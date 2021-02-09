@@ -1,0 +1,10 @@
+<?php include 'components/constructors/header.php'; ?>
+<?php include 'components/side_nav.php' ?>
+   <?php include 'components/breadcrumb.php' ?>
+   <?php include 'components/pages/dashboard.php' ?>
+   <?php include 'components/pages/users.php' ?>
+   <?php include 'components/pages/orders.php' ?>
+   <?php include 'components/pages/products.php' ?>
+   <?php include 'components/pages/settings.php' ?>
+    <?php include 'components/constructors/footer.php' ?>
+    <?php include 'components/charts.php'; ?>

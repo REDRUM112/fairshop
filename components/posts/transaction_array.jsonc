@@ -1,0 +1,131 @@
+{
+  "create_time": "2021-01-10T16:15:55Z",
+  "update_time": "2021-01-10T16:16:10Z",
+  "id": "4M067811ME7136225",
+  "intent": "CAPTURE",
+  "status": "COMPLETED",
+  "payer": {
+    "email_address": "sb-ymbua4619481@personal.example.com",
+    "payer_id": "EW5XEF8HG7ERN",
+    "address": {
+      "country_code": "CA"
+    },
+    "name": {
+      "given_name": "John",
+      "surname": "Doe"
+    }
+  },
+  "purchase_units": [
+    {
+      "description": "Likes Party Game - The Game Where You Swipe Right",
+      "reference_id": "default",
+      "amount": {
+        "value": "25.00",
+        "currency_code": "USD",
+        "breakdown": {
+          "item_total": {
+            "value": "25.00",
+            "currency_code": "USD"
+          },
+          "shipping": {
+            "value": "0.00",
+            "currency_code": "USD"
+          },
+          "handling": {
+            "value": "0.00",
+            "currency_code": "USD"
+          },
+          "insurance": {
+            "value": "0.00",
+            "currency_code": "USD"
+          },
+          "shipping_discount": {
+            "value": "0.00",
+            "currency_code": "USD"
+          }
+        }
+      },
+      "payee": {
+        "email_address": "sb-grsoj4621278@business.example.com",
+        "merchant_id": "MFCE8PC3URA28"
+      },
+      "items": [
+        {
+          "name": "Likes Party Game - The Game Where You Swipe Right",
+          "unit_amount": {
+            "value": "25.00",
+            "currency_code": "USD"
+          },
+          "tax": {
+            "value": "0.00",
+            "currency_code": "USD"
+          },
+          "quantity": "1",
+          "sku": "2"
+        }
+      ],
+      "shipping": {
+        "name": {
+          "full_name": "John Doe"
+        },
+        "address": {
+          "address_line_1": "1 Maire-Victorin",
+          "admin_area_2": "Toronto",
+          "admin_area_1": "ON",
+          "postal_code": "M5A 1E1",
+          "country_code": "CA"
+        }
+      },
+      "payments": {
+        "captures": [
+          {
+            "status": "COMPLETED",
+            "id": "6WT99762TK120535P",
+            "final_capture": true,
+            "create_time": "2021-01-10T16:16:10Z",
+            "update_time": "2021-01-10T16:16:10Z",
+            "amount": {
+              "value": "25.00",
+              "currency_code": "USD"
+            },
+            "seller_protection": {
+              "status": "ELIGIBLE",
+              "dispute_categories": [
+                "ITEM_NOT_RECEIVED",
+                "UNAUTHORIZED_TRANSACTION"
+              ]
+            },
+            "links": [
+              {
+                "href": "https://api.sandbox.paypal.com/v2/payments/captures/6WT99762TK120535P",
+                "rel": "self",
+                "method": "GET",
+                "title": "GET"
+              },
+              {
+                "href": "https://api.sandbox.paypal.com/v2/payments/captures/6WT99762TK120535P/refund",
+                "rel": "refund",
+                "method": "POST",
+                "title": "POST"
+              },
+              {
+                "href": "https://api.sandbox.paypal.com/v2/checkout/orders/4M067811ME7136225",
+                "rel": "up",
+                "method": "GET",
+                "title": "GET"
+              }
+            ]
+          }
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "href": "https://api.sandbox.paypal.com/v2/checkout/orders/4M067811ME7136225",
+      "rel": "self",
+      "method": "GET",
+      "title": "GET"
+    }
+  ]
+}
