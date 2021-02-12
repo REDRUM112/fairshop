@@ -6,7 +6,7 @@ $username_err = $password_err = $confirm_password_err = $email_err = "";
 if($_SERVER["REQUEST_METHOD"] == "POST"){
   if ($_POST['action'] == 'Register') {
     if(empty(trim($_POST["username"]))){
-        $username_err = "Bitte trag deinen Benutzernamen ein.";
+        $username_err = "Your username cannot be empty.";
     } else{
         $sql = "SELECT id FROM accounts WHERE username = ?";
         
@@ -19,12 +19,12 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 mysqli_stmt_store_result($stmt);
                 
                 if(mysqli_stmt_num_rows($stmt) == 1){
-                    $username_err = "Der Benutzername ist bereits in benutzung.";
+                    $username_err = "Your username is already in use, pick another.";
                 } else{
                     $username = trim($_POST["username"]);
                 }
             } else{
-                echo "Oops! Es ist etwas schief gelaufen. Bitte versuch es nochmal.";
+                echo "Oops! things took longer than normal, try again.";
             }
         }
 
@@ -33,24 +33,24 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     
  
     if(empty(trim($_POST["password"]))){
-        $password_err = "Bitte trag ein Passwort ein.";     
+        $password_err = "Your password cannot be empty.";     
     } elseif(strlen(trim($_POST["password"])) < 6){
-        $password_err = "Das Passwort muss mindestens 6 Zeichen beinhalten.";
+        $password_err = "You password must be atleast 6 characters long.";
     } else{
         $password = trim($_POST["password"]);
     }
     
 
     if(empty(trim($_POST["confirm_password"]))){
-        $confirm_password_err = "Bitte bestätige dein Passwort.";     
+        $confirm_password_err = "You must confirm your password..";     
     } else{
         $confirm_password = trim($_POST["confirm_password"]);
         if(empty($password_err) && ($password != $confirm_password)){
-          $confirm_password_err = "Die Passwörter unterscheiden sich. Bitte überprüfe diese.";
+          $confirm_password_err = "Your password doesn't match.";
         }
     }
     if(empty(trim($_POST["email"]))){
-      $email_err = "Bitte bestätige dein Passwort.";     
+      $email_err = "Your email cannot be empty.";     
     } else{
       $email = trim($_POST["email"]);
     }
