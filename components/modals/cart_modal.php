@@ -61,6 +61,36 @@ class Item
 ?> 
 <script>
 paypal.Buttons({
+  createOrder: function() {
+  return fetch('paypal/paypal_transaction.php', {
+    method: 'post',
+    headers: {
+      'content-type': 'application/json'
+    }
+  }).then(function(res) {
+    return res.json();
+  }).then(function(data) {
+    return data.id;
+  });
+},
+onApprove: function(data) {
+  return fetch('/my-server/capture-paypal-transaction', {
+    headers: {
+      'content-type': 'application/json'
+    },
+    body: JSON.stringify({
+      orderID: data.orderID
+    })
+  }).then(function(res) {
+    return res.json();
+  }).then(function(details) {
+    alert('Transaction funds captured from ' + details.payer_given_name);
+  })
+}
+}).render('.paypal-btn');</script>
+
+<!-- <script>
+paypal.Buttons({
     createOrder: function(data, actions) {
       return actions.order.create({  
         purchase_units: [{
@@ -85,7 +115,7 @@ paypal.Buttons({
         $(location).attr('href', '/store/orders.php')
     });
   }
-}).render('.paypal-btn');</script>
+}).render('.paypal-btn');</script> -->
 <div class="modal fade" id="CartModal" tabindex="-1" aria-labelledby="CartModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">

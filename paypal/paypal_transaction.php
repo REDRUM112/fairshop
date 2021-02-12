@@ -1,17 +1,13 @@
 <?php
-namespace Sample;
+namespace Sample\CaptureIntent;
 
-use PayPalCheckoutSdk\Core\PayPalHttpClient;
-use PayPalCheckoutSdk\Core\SandboxEnvironment;
+use Sample\PayPalClient;
 use PayPalCheckoutSdk\Orders\OrdersCreateRequest;
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 } 
 
-ini_set('error_reporting', E_ALL);
-ini_set('display_errors', '1');
-ini_set('display_startup_errors', '1');
 
 class Amount
 {
@@ -26,22 +22,6 @@ class Item
     public $quantity;
     public $sku;
     public $unit_amount;
-}
-  
-class PayPalClient
-{
-    public static function client()
-    {
-        return new PayPalHttpClient(self::environment());
-    }
-
-    public static function environment()
-    {
-        include 'components/config.php';
-        $clientId = getenv("CLIENT_ID") ?: $paypal_clientid;
-        $clientSecret = getenv("CLIENT_SECRET") ?: $paypal_secret;
-        return new SandboxEnvironment($clientId, $clientSecret);
-    }
 }
 
 class CreateOrder
@@ -121,3 +101,4 @@ if (!count(debug_backtrace()))
 {
   CreateOrder::createOrder(true);
 }
+?>
