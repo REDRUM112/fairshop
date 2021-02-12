@@ -9,6 +9,7 @@ if (session_status() == PHP_SESSION_NONE) {
 include 'components/acp_data.php';
 include 'components/pages/posts/adduser_post.php';
 include 'components/pages/posts/addproduct_post.php';
+include 'components/pages/posts/create_order_post.php';
 ?>
 <!doctype html>
 <html lang="en">

@@ -7,6 +7,13 @@ $acp_orders -> execute();
 $acp_orders -> store_result();
 $acp_orders -> bind_result($id, $payer_id, $order_total, $transaction_data, $payment_processor, $payments_status, $tracking_id, $order_status);
 
+$acp_edit_orders = $link -> prepare('SELECT * from orders');
+
+$acp_edit_orders -> execute();
+$acp_edit_orders -> store_result();
+$acp_edit_orders -> bind_result($id, $payer_id, $order_total, $transaction_data, $payment_processor, $payments_status, $tracking_id, $order_status);
+
+
 $acp_wait_orders = $link -> prepare('SELECT * from orders WHERE order_status = "Processing" AND tracking_id = "" AND payment_status = "COMPLETED" ORDER BY id DESC LIMIT 3');
 $acp_wait_orders -> execute();
 $acp_wait_orders -> store_result();
