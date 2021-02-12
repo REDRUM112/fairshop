@@ -18,7 +18,7 @@ class PayPalClient
 
     public static function environment()
     {
-        include 'components/config.php';
+        include '../components/config.php';
         $clientId = getenv("CLIENT_ID") ?: $paypal_clientid;
         $clientSecret = getenv("CLIENT_SECRET") ?: $paypal_secret;
         return new SandboxEnvironment($clientId, $clientSecret);

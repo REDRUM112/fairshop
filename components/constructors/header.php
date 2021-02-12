@@ -36,7 +36,7 @@ if (session_status() == PHP_SESSION_NONE) {
   }
   
   ?></title>
-  <script src="https://www.paypal.com/sdk/js?client-id=<?php echo $paypal_clientid?>"></script>
+  <script src="https://www.paypal.com/sdk/js?client-id=sb"></script>
 <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 </head>

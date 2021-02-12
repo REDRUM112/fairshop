@@ -1,8 +1,13 @@
 <?php
 namespace Sample\CaptureIntent;
 
-use Sample\PayPalClient;
+require '../vendor/autoload.php';
+
+use PayPalCheckoutSdk\Core\PayPalHttpClient;
+use PayPalCheckoutSdk\Core\SandboxEnvironment;
 use PayPalCheckoutSdk\Orders\OrdersCreateRequest;
+
+// Creating an environment
 
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
@@ -28,11 +33,14 @@ class CreateOrder
 {
   public static function createOrder($debug=true)
   {
+    $clientId = "AYq_dPGy5F80jTOkuVpoVpxEfScvqhUg6SVXyTuz-yMViIiY14nRBkoPYzey-T0ptUEd9y6Um37aofSE";
+    $clientSecret = "EIyB8SkVSlCOMidzgzicL-bahK6hKVrk9A4q2dBORDQ5pkyhBRf_Vo_QiIikEJUw6To1gKS1aQRwny79";
+    $environment = new SandboxEnvironment($clientId, $clientSecret);
     $request = new OrdersCreateRequest();
     $request->prefer('return=representation');
     $request->body = self::buildRequestBody();
 
-    $client = PayPalClient::client();
+    $client = new PayPalHttpClient($environment);
     $response = $client->execute($request);
     if ($debug)
     {
@@ -52,7 +60,7 @@ class CreateOrder
 
     private static function buildRequestBody()
     {
-        include 'components/config.php';
+        include '../components/config.php';
         $itemArray = array();
         $order_sum = 0;
         $order = array();
@@ -66,18 +74,20 @@ class CreateOrder
          $item->price =  $products['price'];
          $item->quantity = $products['amount'];
          $item->sku = $products['id'];
-         $item->unit_amount = new stdClass;
+         $item->unit_amount = new \stdClass;
          $item->unit_amount->value = $products['price'];
          $item->unit_amount->currency_code = 'USD';
           
         $amount = new Amount();
         $amount->value = $order_sum; 
         $amount->currency_code = 'USD';
-        $amount->breakdown = new stdClass;
-        $amount->breakdown->item_total = new stdClass;
+        $amount->breakdown = new \stdClass;
+        $amount->breakdown->item_total = new \stdClass;
         $amount->breakdown->item_total->value = $order_sum;
         $amount->breakdown->item_total->currency_code = 'USD';
         array_push($itemArray, $item);
+        var_dump($item);
+        var_dump($amount);
         } 
       }
         return array(
