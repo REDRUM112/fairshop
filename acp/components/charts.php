@@ -50,7 +50,6 @@ const decoded_pdata = JSON.parse(product_data);
 const cats_data = <?php echo GetCatName(); ?>;
 const category_names = JSON.stringify(cats_data);
 const decoded_cat_name = JSON.parse(category_names);
-console.log(decoded_pdata);
 const stock_dataset_cat = [];
 const stock_dataset_stock = [];
 const stockprice_dataset_cat = [];
@@ -59,8 +58,6 @@ decoded_pdata.forEach(element => stockprice_dataset_cat.push(GetCatNames(element
 decoded_pdata.forEach(element => stockprice_dataset_sum.push(element['sum']));
 decoded_stockdata.forEach(element => stock_dataset_cat.push(GetCatNames(element['cat'])));
 decoded_stockdata.forEach(element => stock_dataset_stock.push(element['stock']));
-console.log(stockprice_dataset_cat);
-console.log(stockprice_dataset_sum);
 
 function GetCatNames(id) {
   for (const [keys, values] of Object.entries(decoded_cat_name)) {

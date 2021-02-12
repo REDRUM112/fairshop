@@ -6,12 +6,12 @@
 </div>    
 <div class="form-group <?php echo (!empty($cr_password_err)) ? 'has-error' : ''; ?>">
     <label >Password:</label>
-    <input type="password" name="password"  class="form-control" value="<?php echo $cr_password; ?>">
+    <input type="password"  autocomplete="on" name="password"  class="form-control" value="<?php echo $cr_password; ?>">
     <span class="help-block"><?php echo $cr_password_err; ?></span>
 </div>
 <div class="form-group <?php echo (!empty($cr_confirm_password_err)) ? 'has-error' : ''; ?>">
     <label >Confirm Password:</label>
-    <input type="password" name="confirm_password"  class="form-control" value="<?php echo $cr_confirm_password; ?>">
+    <input type="password" autocomplete="on" name="confirm_password"  class="form-control" value="<?php echo $cr_confirm_password; ?>">
     <span class="help-block"><?php echo $cr_confirm_password_err; ?></span>
 </div>
 <div class="form-group <?php echo (!empty($cr_email_err)) ? 'has-error' : ''; ?>">

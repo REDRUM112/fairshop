@@ -7,7 +7,7 @@
             </div>    
             <div class="form-group <?php echo (!empty($password_err)) ? 'has-error' : ''; ?>">
                 <label>Password:</label>
-                <input type="password" name="password" class="form-control"><br><br>
+                <input type="password" name="password" autocomplete="on" class="form-control"><br><br>
                 <span class="help-block mt-2 mb-2" style="color: red;"><?php echo $password_err; ?></span>
             </div>
             <div class="form-group">

@@ -93,7 +93,38 @@ $(document).ready(function(){
 	$('#users-table').DataTable();
 	$('#manage-users-table').DataTable();
 	$('#products-table').DataTable();
+	$('#orders-table').DataTable();
 	$('#manage-products-table').DataTable();
+	$('#manage-orders-table').DataTable();
+	$('#manage-orders-table').Tabledit({
+		url:'components/pages/posts/manage_orders_action.php',
+		restoreButton: false,
+		editButton: true,
+		deleteButton: true,
+		columns: {
+			identifier: [0, 'id'],
+			editable: [[1, 'Payer_ID'],[2, 'Order_Total'],[3, 'Payment_Processor'], [4, 'Payment_Status'], [5, 'Tracking_ID'], [6, 'Order_Status'] ]
+		},
+		buttons: {
+			edit: {
+					class: 'btn btn-sm btn-warning mb-2',
+					html: '<span class="glyphicon glyphicon-pencil">Edit</span>',
+					action: 'edit'
+			},
+			delete: {
+				class: 'btn btn-sm btn-danger mb-2',
+				html: '<span class="glyphicon glyphicon-pencil">Delete</span>',
+				action: 'delete'
+			}
+		},
+		onSuccess:function(data, textStatus, jqXHR)
+		{
+			if(data.action == 'delete')
+			{
+				$('.tabledit-deleted-row').remove();
+			}
+		}
+	});
 	$('#manage-users-table').Tabledit({
 		url:'components/pages/posts/manage_users_action.php',
 		restoreButton: false,

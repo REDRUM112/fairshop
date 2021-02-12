@@ -50,13 +50,19 @@
     <span class="help-block"><?php echo $stock_err; ?></span>
 </div>
 <div class="form-group col-md-4 <?php echo (!empty($promote_err)) ? 'has-error' : ''; ?>">
-    <label >Promote:</label>
-    <input type="text" name="promote"  class="form-control bg-light" value="<?php echo $promote; ?>">
+    <label >Promote: </label>
+    <select class="form-select bg-light" id="promote-form-active" name="promote" aria-label="active-status">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+  </select>
     <span class="help-block"><?php echo $promote_err; ?></span>
 </div>
 <div class="form-group col-md-2 <?php echo (!empty($active_err)) ? 'has-error' : ''; ?>">
     <label >Active:</label>
-    <input type="text" name="active"  class="form-control bg-light" value="<?php echo $active; ?>">
+    <select class="form-select bg-light" id="active-form-active" name="active" aria-label="active-status">
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+  </select>
     <span class="help-block"><?php echo $active_err; ?></span>
 </div>
       <div class="modal-footer">
