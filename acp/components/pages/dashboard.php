@@ -1,10 +1,11 @@
 <?php
-function getloc($ip) {
+require '../components/config.php';
+function getloc($ip, $key) {
     if ($ip == "::1") {
-        $request = file_get_contents("http://api.ipstack.com/8.8.8.8?access_key=be9d89b1c64f951f08c32c1d288a1640");
+        $request = file_get_contents("http://api.ipstack.com/8.8.8.8?access_key=" . $key);
         return $request;
     } else { 
-        $request = file_get_contents("http://api.ipstack.com/". $ip . "?access_key=be9d89b1c64f951f08c32c1d288a1640");
+        $request = file_get_contents("http://api.ipstack.com/". $ip . "?access_key=" . $key);
         return $request;
     }
    }
@@ -57,7 +58,7 @@ function getloc($ip) {
                         <div class="card-body">
                           <div style="overflow-y: scroll; height: 154px;">
                         <?php  while ($acp_viewing -> fetch()) {
-                          $loc = getloc($ip); 
+                          $loc = getloc($ip, $geoloc_key); 
                           $loc_data = json_decode($loc, true); ?>
                           <?php echo "<img src='https://www.countryflags.io/" . $loc_data['country_code'] . "/shiny/24.png'>" . " " . ID2UserName($id) . ", " . $loc_data['country_name'] . ", " . $loc_data['region_name'] . "(". $ip .")"?></br>
                           <?php } ?>
