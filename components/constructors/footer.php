@@ -63,9 +63,9 @@
   <!-- Grid container -->
 
   <!-- Copyright -->
-  <div class="text-center p-3" style="background-color: rgb(199 199 199);">
+  <div class="text-center p-3 bg-dark bg-gradient" style="opacity: 84%;color: white;">
     © 2020 Copyright:
-    <a class="text-dark" href="<?php echo $domain;?>"><?php echo $site_name;?></a>
+    <a class="text-light" href="<?php echo $domain;?>"><?php echo $site_fqdn;?></a>
   </div>
   <!-- Copyright -->
 </footer>
