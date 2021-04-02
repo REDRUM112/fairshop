@@ -1,14 +1,22 @@
 <?php
-//MYSQL INFO
-$host = 'localhost'; // Host
-$user = 'root'; // Username
-$password = ''; // Password
-$db = 'store'; 
+include 'link.php';
+$id = $site_name = $site_fqdn = $site_name_short = $domain = $paypal_clientid = $geoloc_key = "";
 
-$site_name = "FairShop";
-$site_fqdn = "FairShop.ca";
-$site_name_short = "FS.";
-$domain = "http://FairShop.ca";
-$paypal_clientid = "AYq_dPGy5F80jTOkuVpoVpxEfScvqhUg6SVXyTuz-yMViIiY14nRBkoPYzey-T0ptUEd9y6Um37aofSE";
-$geoloc_key = "be9d89b1c64f951f08c32c1d288a1640";
+$settings_data = $link -> prepare('SELECT * from settings');
+$settings_data -> execute();
+$settings_data -> store_result();
+$settings_data -> bind_result($id, $psite_name, $psite_short_name, $psite_fqdn, $psite_domain, $ppaypal_clientid, $pgeoloc_api_key);
+
+$link->close();
+
+while ($settings_data -> fetch()) {
+  $site_name = $psite_name;
+  $site_name_short = $psite_short_name;
+  $site_fqdn = $psite_fqdn;
+  $site_domain = $psite_domain;
+  $paypal_clientid = $ppaypal_clientid;
+  $geoloc_key = $pgeoloc_api_key;
+  
+}
+
 ?>

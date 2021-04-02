@@ -10,8 +10,8 @@ function chopExtension($filename) {
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
 }
+      include 'components/config.php';
       include 'components/info.php';
-
       include 'components/user_logger.php';
       include 'components/posts/login_post.php';
       include 'components/posts/register_post.php';

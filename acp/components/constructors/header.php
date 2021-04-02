@@ -6,10 +6,12 @@ function chopExtension($filename) {
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
 } 
+require '../components/config.php';
 include 'components/acp_data.php';
 include 'components/pages/posts/adduser_post.php';
 include 'components/pages/posts/addproduct_post.php';
 include 'components/pages/posts/create_order_post.php';
+include 'components/pages/posts/site_settings_post.php';
 ?>
 <!doctype html>
 <html lang="en">
