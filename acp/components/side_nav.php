@@ -1,6 +1,7 @@
+<?php include '../components/config.php' ?>
 <div class="wrapper d-flex justify-content-center min-vh-100 ">
 			<nav id="sidebar" class="active nav-list bg-dark bg-gradient">
-				<h1><a href="../index.php" id="sidenav-logo" class="logo">FS.</a></h1>
+				<h1><a href="../index.php" id="sidenav-logo" class="logo"><?php echo $site_name_short ?></a></h1>
         <ul class="list-unstyled components mb-5">
           <li class="active" id="sidenav-home">
             <a href="#"><span class="fa fa-home"  ></span> Home</a>
