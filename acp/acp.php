@@ -1,10 +1,13 @@
-<?php include 'components/constructors/header.php'; ?>
-<?php include 'components/side_nav.php' ?>
-   <?php include 'components/breadcrumb.php' ?>
-   <?php include 'components/pages/dashboard.php' ?>
-   <?php include 'components/pages/users.php' ?>
-   <?php include 'components/pages/orders.php' ?>
-   <?php include 'components/pages/products.php' ?>
-   <?php include 'components/pages/settings.php' ?>
-    <?php include 'components/constructors/footer.php' ?>
-    <?php include 'components/charts.php'; ?>
+<?php 
+$page_loc = "home";
+include 'components/constructors/header.php'; 
+include 'components/side_nav.php';
+include 'components/breadcrumb.php';
+include 'components/pages/dashboard.php';
+include 'components/pages/users.php'; 
+include 'components/pages/orders.php';
+include 'components/pages/products.php'; 
+include 'components/pages/settings.php'; 
+include 'components/constructors/footer.php'; 
+include 'components/charts.php'
+?>

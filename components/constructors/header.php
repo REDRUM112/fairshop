@@ -57,7 +57,7 @@ if (session_status() == PHP_SESSION_NONE) {
           <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
          <?php while ($product_category -> fetch()) { ?> 
 
-             <li><a class="dropdown-item" href="categories.php?category=<?php echo $name;?>"><?php echo $name;?></a></li>
+             <li><a class="dropdown-item" href="categories.php?category=<?php echo $id;?>"><?php echo $name;?></a></li>
             <?php  } ?>
           </ul>
         </li>
@@ -70,7 +70,7 @@ if (session_status() == PHP_SESSION_NONE) {
   </div>
 </nav>
 <?php 
-      include 'components/modals/cart_modal.php'; 
+       include 'components/modals/cart_modal.php'; 
       include 'components/modals/register_modal.php'; 
       include 'components/modals/login_modal.php';
       include 'components/modals/interact_modal.php';
