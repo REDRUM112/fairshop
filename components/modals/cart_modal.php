@@ -90,7 +90,7 @@ paypal.Buttons({
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="CartModalLabel">Cart 🛒 (<?php echo count($_SESSION["cart"]); ?>)</h5>
+        <h5 class="modal-title" id="CartModalLabel">Cart 🛒 (<?php if(empty($_SESSION["cart"])){ } else { echo count($_SESSION["cart"]);} ?>)</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <?php     if(empty($_SESSION["cart"])){ 
@@ -105,7 +105,7 @@ paypal.Buttons({
           <div class="row g-0">
             <div class="col-md-4">
               <img
-                src="<?php echo $product['images'] ?>"
+                src="images/products/<?php echo $product['images'] ?>"
                 alt="..."
                 class="img-fluid"
               />

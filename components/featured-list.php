@@ -9,7 +9,7 @@
         <div class="card item mycard" style="height:690px; width:300px;">
           <img class="card-img-top" height=372px; width=250px; src="images/products/<?php echo $images_data[0];?>" alt="<?php echo $name; ?>">
           <div class="card-body">
-            <p class="card-text"><?php echo $long_desc;?></p>
+            <p class="card-text"><?php echo $short_desc;?></p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="range"> 
             <label class="form-label" for="customRange2">Amount To buy:  <span id="<?php echo $id;?>rangeval">1</span></label>
@@ -18,7 +18,7 @@
           <div class="form-group <?php echo (!empty($email_err)) ? 'has-error' : ''; ?>">
             <input type="hidden" name="product_id"  class="form-control" value="<?php echo $id; ?>">
             <input type="hidden" name="product_name"  class="form-control" value="<?php echo $name; ?>">
-            <input type="hidden" name="product_image"  class="form-control" value="<?php echo $images; ?>">
+            <input type="hidden" name="product_image"  class="form-control" value="<?php echo $images_data[0]; ?>">
             <input type="hidden" name="product_price"  class="form-control" value="<?php echo $price; ?>">
             <input type="hidden" name="product_stock"  class="form-control" value="<?php echo $stock; ?>">
           </div>
