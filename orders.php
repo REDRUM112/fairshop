@@ -18,8 +18,8 @@ $data = json_decode($transaction_data, true);
 if ($link->affected_rows > 0) { ?>
     <div class="accordion" id="accordionExample">
 <?php  while ($order_data -> fetch()) { 
- include 'components\payments\paypal.php';
- include 'components\payments\interact.php';
+ include 'components/payments/paypal.php';
+ include 'components/payments/interact.php';
   }
 } else {
   echo "You have no orders, yet.";
@@ -27,5 +27,5 @@ if ($link->affected_rows > 0) { ?>
 ?></div><?php if ($link->affected_rows > 0) { ?><br> <hr> <h5 style="line-height: 3rem;">You have spent $<?php echo $total_spent ;?> over a total of <?php echo $link->affected_rows;?> orders.</h5> <?php } ?>
  </div> <?php
 
- include 'components\constructors\footer.php';?>
+ include 'components/constructors/footer.php';?>
  <script>

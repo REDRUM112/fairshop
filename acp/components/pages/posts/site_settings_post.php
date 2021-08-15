@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/store/components/link.php';
+include '../components/link.php';
 
 $site_name = $site_name_short = $site_fqdn = $site_domain = $paypal_clientid = $geoloc_key = "";
 $site_name_err = $site_name_short_err = $site_fqdn_err = $site_domain_err = $paypal_clientid_err = $geoloc_key_err = "";

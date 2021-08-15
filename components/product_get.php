@@ -1,5 +1,5 @@
 <?php 
-include 'components\link.php';
+include 'link.php';
 $parsed_url = parse_url($_GET['category']);
 
 if ($parsed_url["path"] == "featured") {

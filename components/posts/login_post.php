@@ -1,5 +1,5 @@
 <?php
-include 'components\link.php';
+include __DIR__ . "/../link.php";
 
 $username = $password = "";
 $username_err = $password_err = "";

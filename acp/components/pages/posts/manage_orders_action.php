@@ -1,5 +1,5 @@
 <?php  
-include $_SERVER['DOCUMENT_ROOT'] . '/store/components/link.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/components/link.php';
 
 $input = filter_input_array(INPUT_POST);
 

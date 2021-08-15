@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/store/components/link.php';
+include '../components/link.php';
 
 $acp_payer_id = $acp_order_total = $acp_payment_processor = $acp_payment_status = $acp_tracking_id = $acp_order_status = "";
 $acp_payer_id_err = $acp_order_total_err = $acp_payment_processor_err = $acp_payment_status_err = $acp_tracking_id_err = $acp_order_status_err ="";

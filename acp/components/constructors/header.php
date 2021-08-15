@@ -6,6 +6,7 @@ function chopExtension($filename) {
 if (session_status() == PHP_SESSION_NONE) {
   session_start();
 } 
+
 include '../components/config.php';
 include 'components/acp_data.php';
 include 'components/pages/posts/adduser_post.php';
@@ -29,5 +30,13 @@ include 'components/pages/posts/site_settings_post.php';
 
 
   </head>
+<?php if ($_SESSION["admin"] == 0 ) { 
+  header("Location: /../");
+
+ }?>
+<?php if ($_SESSION["admin"] == null ) { 
+  header("Location: /../");
+
+ }?>
   <body onload="ShowHome()">
 		

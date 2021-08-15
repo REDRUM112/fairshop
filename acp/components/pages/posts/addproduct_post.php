@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/store/components/link.php';
+include '../components/link.php';
 $image_array=array();
 $banner_url = "";
 $category = $name = $short_desc = $long_desc = $price = $shipping = $shipping = $stock = $promote = $active = "";

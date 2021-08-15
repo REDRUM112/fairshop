@@ -1,8 +1,10 @@
 <?php 
 
 
-include 'components\constructors\header.php';
-include 'components\product_get.php'; 
+ini_set('display_errors',1); 
+error_reporting(E_ALL);
+include 'components/constructors/header.php';
+include 'components/product_get.php'; 
 
 
 $_SESSION["this_url"] = full_path().'?category='.$parsed_url["path"];
@@ -49,7 +51,7 @@ $_SESSION["this_url"] = full_path().'?category='.$parsed_url["path"];
   </div>
   </div>
 </div>
-<?php include 'components\constructors\footer.php';?>
+<?php include 'components/constructors/footer.php';?>
 <script>
 $(document).ready(function() {
 

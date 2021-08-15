@@ -1,5 +1,5 @@
 <?php
-include 'C:\dummy\inventory\store\components\link.php';
+include __DIR__ . "/../link.php";
 $first_name = $last_name = $address = $app = $country = $city = $state = $zip = $e_email = $e_order_total = "";
 $first_name_err = $last_name_err = $address_err = $app_err = $country_err = $city_err = $state_err = $zip_err = $e_email_err = "";
 if (session_status() == PHP_SESSION_NONE) {
@@ -24,7 +24,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           $param_status = $response['transaction']['status'];
 
           if(mysqli_stmt_execute($stmt)){
-            header("Location: /store/order.php");
+            header("Location: order.php");
 
           } else{
               echo "Oops! Things took longer than normal, try again.";
@@ -113,7 +113,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
           $param_status = "Waiting on payment";
 
           if(mysqli_stmt_execute($stmt)){
-            header("Location: /store/orders.php");
+            header("Location: orders.php");
 
           } else{
               echo "Oops! Things took longer than normal, try again.";

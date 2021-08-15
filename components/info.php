@@ -1,5 +1,5 @@
 <?php
-include 'components\link.php';
+include 'link.php';
 
 $account_data = $link -> prepare('SELECT * from accounts');
 

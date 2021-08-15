@@ -1,5 +1,8 @@
-<?php include 'components/constructors/header.php'; 
-$_SESSION["this_url"] = full_path(); ?>
+<?php 
+ini_set('display_errors',1); 
+error_reporting(E_ALL);
+ include 'components/constructors/header.php'; 
+ $_SESSION["this_url"] = full_path(); ?>
 
 <div class="main d-flex justify-content-center">
   <?php include 'components/featured-products.php'; ?>

@@ -54,7 +54,9 @@ hr {
   background-color:#f6f6f6
 }
 .mycard {
-  height: 575px; width: 362px; display: inline-block;
+  /* height: 575px; */
+  width: 362px;
+  display: inline-block;
 }
 .btn-load-more {
   
@@ -120,4 +122,11 @@ html {
 }
 .accordion {
   background-color: #fdfdfd;
+}
+.card-title {
+    margin-bottom: .5rem;
+    height: 45px;
+}
+.card-deck {
+    text-align: center;
 }

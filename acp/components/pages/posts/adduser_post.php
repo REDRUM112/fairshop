@@ -1,5 +1,5 @@
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/store/components/link.php';
+include '../components/link.php';
 
 $cr_username = $cr_password = $cr_confirm_password = $cr_email = "";
 $cr_username_err = $cr_password_err = $cr_confirm_password_err = $cr_email_err = "";

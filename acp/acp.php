@@ -1,4 +1,6 @@
 <?php 
+ini_set('display_errors',1); 
+error_reporting(E_ALL);
 $page_loc = "home";
 include 'components/constructors/header.php'; 
 include 'components/side_nav.php';

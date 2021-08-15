@@ -2,7 +2,8 @@
 <html lang="en">
 
 <?php
-
+ini_set('display_errors',1); 
+error_reporting(E_ALL);
 function chopExtension($filename) {
   return substr($filename, 0, strrpos($filename, '.'));
 }
@@ -50,7 +51,7 @@ if (session_status() == PHP_SESSION_NONE) {
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav collapse navbar-collapse justify-content-center">
         <li class="nav-item">
-          <a class="nav-link " aria-current="page" href="/store">Home</a>
+          <a class="nav-link " aria-current="page" href="./">Home</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">Product Categories</a>
@@ -70,7 +71,7 @@ if (session_status() == PHP_SESSION_NONE) {
   </div>
 </nav>
 <?php 
-       include 'components/modals/cart_modal.php'; 
+      include 'components/modals/cart_modal.php'; 
       include 'components/modals/register_modal.php'; 
       include 'components/modals/login_modal.php';
       include 'components/modals/interact_modal.php';
